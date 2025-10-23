@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Karo - Learn to Code</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS is included directly in the HTML file for simplicity */
+        
+        :root {
+            --primary-purple: #7843e6;
+            --dark-purple: #706193;
+            --accent-pink: #bc3fde;
+            --background-light: #f4f5f7;
+            --text-light: #ffffff;
+            --text-dark: #333333;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* --- Header & Navigation --- */
+        .main-header {
+            background: var(--primary-purple);
+            color: var(--text-light);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-family: 'Bungee', cursive;
+            font-size: 2rem;
+            text-transform: uppercase;
+            text-shadow: 2px -2px 0px #00ffff, -2px 2px 0px #ff00ff;
+        }
+
+        .main-nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .main-nav ul li {
+            margin-left: 25px;
+        }
+
+        .main-nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .main-nav a:hover {
+            color: var(--accent-pink);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-purple), var(--dark-purple));
+            color: var(--text-light);
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Bungee', cursive;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* --- Courses Section --- */
+        .courses-section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .courses-section h2 {
+            font-family: 'Bungee', cursive;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--dark-purple);
+        }
+
+        .courses-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .course-card {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            padding: 30px;
+            text-align: left;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(120, 67, 230, 0.2);
+        }
+
+        .course-card .icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .course-card h3 {
+            font-family: 'Bungee', cursive;
+            color: var(--dark-purple);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .course-card ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .course-card li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .course-card li::before {
+            content: '✓';
+            color: var(--primary-purple);
+            font-weight: bold;
+            margin-right: 10px;
+            margin-top: -2px;
+        }
+
+        .enroll-btn {
+            display: block;
+            background: var(--primary-purple);
+            color: var(--text-light);
+            text-align: center;
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .enroll-btn:hover {
+            background-color: var(--dark-purple);
+        }
+        
+        /* --- Footer --- */
+        .main-footer {
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 900px) {
+            .main-header {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .courses-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">Code Karo</div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Plans</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="https://www.linkedin.com/in/shrish-mhaske-b410a4330/">Log In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Unlock Your Coding Potential</h1>
+            <p>From fundamentals to advanced topics, master the skills you need to build the future.</p>
+        </section>
+
+        <section class="courses-section">
+            <div class="container">
+                <h2>Our Courses</h2>
+                <div class="courses-container">
+
+                    <article class="course-card">
+                        <svg class="icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="var(--primary-purple)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M50 20 v20 m-20 20 h40 m-20 0 v20 m-20-10 h40"/>
+                            <circle cx="50" cy="20" r="10"/> <circle cx="30" cy="60" r="10"/> <circle cx="70" cy="60" r="10"/>
+                        </svg>
+                        <h3>DSA</h3>
+                        <ul>
+                            <li>🧠 Master killer problem-solving tricks</li>
+                            <li>📚 Decode algorithms with ease</li>
+                            <li>🌳 Conquer arrays, trees & graphs</li>
+                            <li>⚡ Boost speed with code optimizations</li>
+                        </ul>
+                        <a href="#" class="enroll-btn">Enroll Now</a>
+                    </article>
+
+                    <article class="course-card">
+                        <svg class="icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="var(--primary-purple)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                           <path d="M30 30 L10 50 L30 70 M70 30 L90 50 L70 70 M58 25 L42 75"/>
+                        </svg>
+                        <h3>Web-Dev</h3>
+                        <ul>
+                            <li>🎨 Craft stunning UIs with HTML/CSS</li>
+                            <li>🧩 Add life using JavaScript</li>
+                            <li>⚙️ Go dynamic with React & APIs</li>
+                            <li>🚀 Launch your own mini web app</li>
+                        </ul>
+                        <a href="#" class="enroll-btn">Enroll Now</a>
+                    </article>
+
+                    <article class="course-card">
+                         <svg class="icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="var(--primary-purple)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M50 35 A 15 15 0 1 1 50 65 A 15 15 0 1 1 50 35 M50 20 v-10 m0 80 v-10 m30 -50 h10 m-80 0 h10 m21.2 -21.2 l7-7 m-58.4 58.4 l7-7 m-7 -51.4 l7 7 m44.4 44.4 l7 7"/>
+                            <circle cx="50" cy="50" r="5"/>
+                        </svg>
+                        <h3>Gen AI</h3>
+                        <ul>
+                            <li>🧙 Write smart prompts like a wizard</li>
+                            <li>✍️ Generate cool text & images</li>
+                            <li>🤖 Play with OpenAI & Hugging Face</li>
+                            <li>🔥 Build jaw-dropping AI projects</li>
+                        </ul>
+                        <a href="#" class="enroll-btn">Enroll Now</a>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 Code Karo. All Rights Reserved. Designed with imagination.</p>
+    </footer>
+
+</body>
+</html>
